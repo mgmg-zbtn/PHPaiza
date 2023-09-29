@@ -61,7 +61,7 @@ public class Make {
 		File mainFile = new File(dir.getParent() + "\\index.php");
 		mainFile.createNewFile();
 		
-		Path basePath = Paths.get("src\\PHPTemplate\\index.php");
+		Path basePath = Paths.get("src\\Template\\index.php");
 		String temp = Files.readString(basePath);
 		
 		// replace [Template]
