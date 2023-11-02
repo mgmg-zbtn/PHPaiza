@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "G:/code/lib/jericho-html-3.4/dist/jericho-html-3.4.jar"
+    ],
+}
