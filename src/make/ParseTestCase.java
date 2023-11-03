@@ -14,16 +14,11 @@ import net.htmlparser.jericho.Source;
 
 /**
  * <code></code>
- * 
  */
 public class ParseTestCase {
 
 	public String title;
 	public List<String> testCaseList;
-	
-	public static void main(String[] args) {
-		new ParseTestCase();
-	}
 	
 	public ParseTestCase() {
 		
