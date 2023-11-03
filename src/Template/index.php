@@ -1,11 +1,36 @@
 <?php
-// Paiza template
 
-$input_line = trim(fgets(STDIN));
-for ($i = 0; $i < $input_line; $i++) {
-    $s = trim(fgets(STDIN));
-    $s = str_replace(array("\r\n","\r","\n"), '', $s);
-    $s = explode(" ", $s);
-    echo "hello = ".$s[0]." , world = ".$s[1]."\n";
-}
+// fgets(STDIN);
+//---------------------------------
+// A B C1
+// echo trim('  A B C  ').'1';
+//---------------------------------
+// AAAbbbCCC
+// echo str_replace('BBB', 'bbb', 'AAABBBCCC');
+//---------------------------------
+// ['A', 'B', 'C', 'D']
+// var_dump(explode(' ', 'A B C D'));
+//---------------------------------
+// $a => A
+// ..
+// list($a, $b, $c, $d) = explode(' ', 'A B C D');
+//---------------------------------
+$temp = [1, 2, 3];
+//---------------------------------
+// last in
+// [1, 2, 3, 0] <=
+array_push($temp, 0);
+//---------------------------------
+// last out
+// [1, 2, 3] => 0
+array_pop($temp);
+//---------------------------------
+// first in
+// => [0, 1, 2, 3]
+array_unshift($temp, 0);
+//---------------------------------
+// first out
+// 0 <= [1, 2, 3]
+array_shift($temp);
+//---------------------------------
 
