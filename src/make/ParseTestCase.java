@@ -13,12 +13,23 @@ import net.htmlparser.jericho.HTMLElementName;
 import net.htmlparser.jericho.Source;
 
 /**
- * <code></code>
+ * <pre class="sample-content__input">
+ *     <code>
+ *         #target#
+ *     </code>
+ * </pre>
+ * 
+ * ※パース出来ない時にデバッグするのでエントリポイント必要
+ * 
  */
 public class ParseTestCase {
 
 	public String title;
 	public List<String> testCaseList;
+	
+	public static void main(String[] args) {
+		new ParseTestCase();
+	}
 	
 	public ParseTestCase() {
 		
@@ -36,11 +47,19 @@ public class ParseTestCase {
 				title = m.group();
 			}
 			
-			List<Element> titleList = source.getAllElements(HTMLElementName.CODE);
-			for (Element e : titleList) {
-				// System.out.println(e.getContent().toString());
-				// System.out.println("-------------------------------------");
-				testCaseList.add(e.getContent().toString());
+			List<Element> preList = source.getAllElements(HTMLElementName.PRE);
+			for (Element e : preList) {
+				String str = e.getAttributeValue("class");
+				if (str != null) {
+					if (e.getAttributeValue("class").equals("sample-content__input")) {
+						List<Element> codeList = e.getContent().getAllElements(HTMLElementName.CODE);
+						for (Element code : codeList) {
+							// System.out.println(code.getContent().toString());
+							// System.out.println("-----------------------------------------------");
+							testCaseList.add(code.getContent().toString());
+						}
+					}
+				}
 			}
 			
 		} catch (MalformedURLException e) {
