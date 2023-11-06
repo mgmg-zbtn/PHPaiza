@@ -1,6 +1,9 @@
 todo
 後で書き直す
 
+jericho使う
+->ParseTestCase.java
+
 download/index.html
 ファイルの種類「ウェブページ、完全」
 上記以外だとタグの取得方法が変わってしまい動かないので注意
