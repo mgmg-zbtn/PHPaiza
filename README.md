@@ -23,11 +23,12 @@ about:Jericho
 1. コマンドプロンプトからdebug.batを実行する。
 
 ```text
-ROOT\DIR> .\debug.bat Z--- N
+ROOT\DIR> .\debug.bat Z--- N F
 ```
 
 Z--- 問題番号  
 N テストケース番号  
+F 1 or '' 1なら単体テスト、省略で正答との比較まで行う。  
 
 # Note
 
