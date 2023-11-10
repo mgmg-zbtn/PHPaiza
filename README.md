@@ -1,25 +1,32 @@
-todo
-後で書き直す
 
-jericho使う
-->ParseTestCase.java
+# PHPaiza
 
-download/index.html
-ファイルの種類「ウェブページ、完全」
-上記以外だとタグの取得方法が変わってしまい動かないので注意
+PHPでPaizaの問題に挑戦する時、ローカルでデバッグする環境を作る。  
 
-バッチファイルでテストケース判定を行う
-arg[1] 問題番号
-arg[2] テストケース番号
-ROOT\DIR> .\debug.bat Z*** N
+# Requirement
 
-「case*.txt」で標準入力を与えて、
-出力結果を「log*.txt」へ保存
-「PaizaCompare.jar」で「ans*.txt」と「log*.txt」を比較する
+* [Jericho HTML Parser](http://jericho.htmlparser.net/docs/index.html)  
+* [PaizaCompare](https://github.com/mgmg-zbtn/PaizaCompare/tree/master)
 
-PS  :x
-CMD :o
-ROOT\DIR>php ./src/Z000/Z***/index.php < ./src/Z000/Z***/testcase/case*.txt
+# Installation
 
+1. sourceforgeからダウンロード
+1. .vscode/settings.json
+1. java.project.referencedLibrariesにjarファイルへのパスを指定する。
 
+# Usage
 
+1. 問題ページをダウンロードする。
+1. src/make/Make.javaを実行する。
+1. 生成された（問題番号ディレクトリ以下の）index.phpに解答を実装する。
+1. コマンドプロンプトからdebug.batを実行する。
+
+'''ROOT\DIR> .\debug.bat Z--- N'''
+Z--- 問題番号  
+N テストケース番号  
+
+# Note
+
+PROJECTROOT/download/index.html  
+ファイルの種類「ウェブページ、完全」  
+※上記以外の保存方法だとタグの取得方法が変わってしまい動かない。  
