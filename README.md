@@ -1,5 +1,5 @@
 
-# PHPaiza
+# PHPaiza for VSCode
 
 PHPでPaizaの問題に挑戦する時、ローカルでデバッグする環境を作る。  
 
