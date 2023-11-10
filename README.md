@@ -13,8 +13,7 @@ PHPでPaizaの問題に挑戦する時、ローカルでデバッグする環境
 about:Jericho  
 
 1. sourceforgeからダウンロード
-1. .vscode/settings.json
-1. java.project.referencedLibrariesにjarファイルへのパスを指定する。
+1. .vscode/settings.jsonにjarファイルへのパスを指定する。
 
 # Usage
 
