@@ -1,4 +1,5 @@
 /bin/
 /src/[A-Y][0-9][0-9][0-9]/
-!/download/.keep
 /src/sandbox/
+/download/index_files/
+download/index.html
