@@ -18,9 +18,10 @@
 //---------------------------------
 // YOKUTSUKAU
 $N = (int)trim(fgets(STDIN));
-list($A, $B, $C, $D) = explode(' ', trim(fgets(STDIN)));
+list($N, $M, $S) = explode(' ', trim(fgets(STDIN)));
 //---------------------------------
 trim('  A B C  ');
+// 
 // 'A B C'
 //---------------------------------
 str_replace('BBB', 'bbb', 'AAABBBCCC');
