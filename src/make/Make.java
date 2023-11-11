@@ -63,16 +63,7 @@ public class Make {
 		
 		Path basePath = Paths.get("src\\make\\index.php");
 		String temp = Files.readString(basePath);
-		
-		// // replace [Template]
-		// String packageName = problem.charAt(0) + "000." + problem;
-		// temp = temp.replace("Template", packageName);
-		
-		// // replace [TESTCASE]
-		// String testCase = dir.getPath() + "\\case1.txt";
-		// testCase = testCase.replace("\\", "\\\\");
-		// temp = temp.replace("TESTCASE", testCase);
-		
+
 		Path wp = Paths.get(mainFile.toURI());
 		Files.write(wp, temp.getBytes(), StandardOpenOption.WRITE);
 	}
