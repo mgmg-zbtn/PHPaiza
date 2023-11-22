@@ -18,21 +18,26 @@
 //---------------------------------
 // YOKUTSUKAU
 $N = (int)trim(fgets(STDIN));
-list($N, $M, $S) = explode(' ', trim(fgets(STDIN)));
+for ($n = 0; $n < $N; $n++) {
+}
 //---------------------------------
-trim('  A B C  ');
-// 
-// 'A B C'
+$temp = explode(' ', trim(fgets(STDIN)));
+for ($t = 0; $t < count($temp); $t++) {$temp[$t] = (int)$temp[$t]; }
+// STDIN > 'A B C D'
+// ['A', 'B', 'C', 'D']
+//---------------------------------
+list($N, $M, $S) = explode(' ', trim(fgets(STDIN)));
+$N = (int)$N;
+$M = (int)$M;
+$S = (int)$S;
+// STDIN > 'N M S'
+//---------------------------------
+$temp = str_split(trim(fgets(STDIN)));
+// STDIN > '012345'
+// $temp -> [0, 1, 2, 3, 4, 5]
 //---------------------------------
 str_replace('BBB', 'bbb', 'AAABBBCCC');
 // AAAbbbCCC
-//---------------------------------
-explode(' ', 'A B C D');
-// ['A', 'B', 'C', 'D']
-//---------------------------------
-list($a, $b, $c, $d) = explode(' ', 'A B C D');
-// $a => A
-// $b => B...
 //---------------------------------
 $STR = ['A', 'B', 'C', 'D'];
 implode($STR);
@@ -59,10 +64,8 @@ for ($i = 0; $i < strlen($STR); $i++) {
     // count byte
 }
 //---------------------------------
-// 要素数を超える操作をすると
-// NULLが紛れ込むので要注意
-//---------------------------------
 $temp = [1, 2, 3];
+// 要素数を超えるとNULL
 //---------------------------------
 // last in
 // [1, 2, 3, 0] <=
@@ -80,4 +83,54 @@ array_unshift($temp, 0);
 // 0 <= [1, 2, 3]
 array_shift($temp);
 //---------------------------------
-
+// B138
+$area = [[]];
+for ($y = 0; $y < $Y; $y++) {
+    $area[$y] = str_split(trim(fgets(STDIN)));
+}
+// input
+// ###
+// #.#
+// ###
+//
+// output
+// ['#', '#', '#']
+// ['#', '.', '#']
+// ['#', '#', '#']
+//---------------------------------
+$map = [
+    [-1, -1],[ 0, -1],[ 1, -1],
+    [-1,  0],         [ 1,  0],
+    [-1,  1],[ 0,  1],[ 1,  1],
+];
+// [x,y],[x,y],[x,y]
+// [x,y],[-,-],[x,y]
+// [x,y],[x,y],[x,y]
+//---------------------------------
+class Tuple {
+    public $A;
+    public $B;
+    public function __construct(int $A, int $B) {
+        $this->A = $A;
+        $this->B = $B;
+    }
+}
+$t = new Tuple(0, 0);
+$t->A;
+//---------------------------------
+// $tuples = []; // 宣言するだけなら一緒
+$tuples[] = new Tuple(0, 0);
+array_push($tuples, new Tuple(1, 1));
+$tuples[0]; // 0, 0
+$tuples[1]; // 1, 1
+//---------------------------------
+class Test {
+    public static $hoge;
+    public static function SF(){}
+    public function F() {}
+}
+Test::$hoge;
+Test::SF();
+$t = new Test();
+$t->F();
+//---------------------------------
